@@ -1,4 +1,9 @@
-:root{
-    background: linear-gradient(to right, #33425E, #000000);;
-    color: white;
+:root {
+  background: linear-gradient(to right, #33425e, #000000);
+  color: white;
+}
+
+@font-face {
+  font-family: basierCircle;
+  src: url(./assets/fonts/BasierCircle-Regular.ttf);
 }

@@ -1,5 +1,12 @@
+import Sidebar from "./components/sideBar/Sidebar";
+import "./app.scss"
+
 function App() {
-  return <div>Layout</div>;
+  return (
+    <div className="app-body">
+      <Sidebar />
+    </div>
+  );
 }
 
 export default App;

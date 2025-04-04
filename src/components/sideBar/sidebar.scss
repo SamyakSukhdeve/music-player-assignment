@@ -1,0 +1,33 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  margin: 32px;
+}
+
+.nav-list {
+  padding: 10px;
+}
+
+.nav-item {
+  font-family: basierCircle;
+  font-weight: 400;
+  font-size: 20x;
+  line-height: 32px;
+}
+
+.avatar {
+  height: 48px;
+  width: 48px;
+  background: #151515;
+  border-radius: 80px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 80px;
+}
