@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Blinding Lights",
+    "thumbnail": "https://via.placeholder.com/150",
+    "musicUrl": "https://example.com/blinding-lights.mp3",
+    "duration": "3:20",
+    "artistName": "The Weeknd"
+  },
+  {
+    "title": "Shape of You",
+    "thumbnail": "https://via.placeholder.com/150",
+    "musicUrl": "https://example.com/shape-of-you.mp3",
+    "duration": "3:53",
+    "artistName": "Ed Sheeran"
+  },
+  {
+    "title": "Levitating",
+    "thumbnail": "https://via.placeholder.com/150",
+    "musicUrl": "https://example.com/levitating.mp3",
+    "duration": "3:40",
+    "artistName": "Dua Lipa"
+  },
+  {
+    "title": "Peaches",
+    "thumbnail": "https://via.placeholder.com/150",
+    "musicUrl": "https://example.com/peaches.mp3",
+    "duration": "3:18",
+    "artistName": "Justin Bieber"
+  },
+  {
+    "title": "Stay",
+    "thumbnail": "https://via.placeholder.com/150",
+    "musicUrl": "https://example.com/stay.mp3",
+    "duration": "2:38",
+    "artistName": "The Kid LAROI, Justin Bieber"
+  }
+]
