@@ -1,8 +1,12 @@
+import { useContext, useState } from "react";
 import Input from "../../components/input/Input";
 import Songcard from "../../components/songCard/Songcard";
 import "./foryou.scss";
+import AppContext from "../../context/AppContext";
 
 const Foryou = () => {
+  const { filtredData } = useContext(AppContext);
+
   return (
     <div className="foryou-body">
       <div className="title-text">For You</div>
@@ -15,7 +19,15 @@ const Foryou = () => {
         }}
       >
         <Input />
-        <Songcard />
+        {filtredData.map((d, i) => (
+          <Songcard
+            key={i}
+            title={d.title}
+            author={d.artistName}
+            length={d.duration}
+            thumbnail={d.thumbnail}
+          />
+        ))}
       </div>
     </div>
   );
