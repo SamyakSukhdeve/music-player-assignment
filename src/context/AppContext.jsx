@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const AppContext = createContext();
 
@@ -44,6 +44,37 @@ export const AppProvider = ({ children }) => {
   ];
   const [activeTab, setActiveTab] = useState("foryou");
   const [filtredData, setFiltredData] = useState(data);
+  const [currentSong, setCurrentSong] = useState(data[0]);
+  const [isPlaying, setIsPlaying] = useState(null);
+  const [fav, setFav] = useState([]);
+  const [recent, setRecent] = useState([]);
+
+  useEffect(() => {
+    const storedRecent =
+      JSON.parse(sessionStorage.getItem("recentlyPlayed")) || [];
+    setRecent(storedRecent);
+  }, []);
+
+  useEffect(() => {
+    const storedFav = JSON.parse(localStorage.getItem("favourites")) || [];
+    setFav(storedFav);
+  }, []);
+
+  const prevSong = () => {
+    const index = data.findIndex((i) => i.title == currentSong.title);
+    if (index == 0) {
+      setCurrentSong(data[data.length - 1]);
+    } else [setCurrentSong(data[index - 1])];
+    setIsPlaying(true);
+  };
+
+  const nextSong = () => {
+    const index = data.findIndex((i) => i.title == currentSong.title);
+    if (index == data.length - 1) {
+      setCurrentSong(data[0]);
+    } else [setCurrentSong(data[index + 1])];
+    setIsPlaying(true);
+  };
 
   return (
     <AppContext.Provider
@@ -53,6 +84,16 @@ export const AppProvider = ({ children }) => {
         data,
         setFiltredData,
         filtredData,
+        currentSong,
+        setCurrentSong,
+        isPlaying,
+        setIsPlaying,
+        prevSong,
+        nextSong,
+        setFav,
+        fav,
+        recent,
+        setRecent,
       }}
     >
       {children}

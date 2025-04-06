@@ -1,11 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Input from "../../components/input/Input";
 import Songcard from "../../components/songCard/Songcard";
 import "./foryou.scss";
 import AppContext from "../../context/AppContext";
 
 const Foryou = () => {
-  const { filtredData } = useContext(AppContext);
+  const { filtredData, setCurrentSong, setIsPlaying } =
+    useContext(AppContext);
 
   return (
     <div className="foryou-body">
@@ -21,6 +22,9 @@ const Foryou = () => {
         <Input />
         {filtredData.map((d, i) => (
           <Songcard
+            onClick={() => {
+              setCurrentSong(d), setIsPlaying(true);
+            }}
             key={i}
             title={d.title}
             author={d.artistName}
