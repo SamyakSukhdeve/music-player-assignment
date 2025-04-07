@@ -1,5 +1,9 @@
 .recent-body {
   margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .recent-title {

@@ -1,7 +1,12 @@
-.body {
+.sidebar-body {
   display: flex;
   flex-direction: column;
-  margin: 32px;
+  width: 220px;
+  height: 100%;
+  padding: 20px;
+  color: white;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }
 
 .nav-list {
@@ -32,4 +37,47 @@
   height: 100%;
   object-fit: cover;
   border-radius: 80px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1100;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.children-container {
+  margin-top: 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .sidebar-body {
+    transform: translateX(-100%);
+    display: none;
+    transition: transform 0.3s ease;
+    margin-top: 50px;
+  }
+  .children-container {
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .open {
+    transform: translateX(0);
+    display: flex;
+  }
 }

@@ -47,7 +47,6 @@
 .play-pause-button {
   height: 48px;
   width: 48px;
-  
 }
 .volume-button {
   height: 48px;
@@ -57,4 +56,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 480px) {
+  .song-thumbnail {
+    width: 370px;
+    height: 370px;
+  }
+  .player-body {
+    margin: 10px;
+    padding: 0;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .song-name {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .song-artist {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .media-controles {
+    display: flex;
+    width: 360px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .styled-progress-bar {
+    width: 360px;
+  }
+  .thumbnail-img {
+    width: 360px;
+    height: 360px;
+  }
 }

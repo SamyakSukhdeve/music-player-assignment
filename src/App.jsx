@@ -32,33 +32,31 @@ function App() {
 
   const recentlyPlayed = (song) => {
     let recent = JSON.parse(sessionStorage.getItem("recentlyPlayed")) || [];
-
     recent = recent.filter((s) => s.title !== song.title);
-
-   
     recent.unshift(song);
 
     if (recent.length > 10) {
       recent = recent.slice(0, 10);
     }
-
     sessionStorage.setItem("recentlyPlayed", JSON.stringify(recent));
-
     setRecent(recent);
   };
 
   return (
     <div className="app-body">
-      <Sidebar />
-      {activeTab === "foryou" ? <Foryou /> : null}
-      {activeTab === "fav" ? <Fav /> : null}
-      {activeTab === "recent" ? <Recent /> : null}
-      <audio
-        src={currentSong.musicUrl}
-        ref={audioRef}
-        onTimeUpdate={onPlaying}
-      ></audio>
-      <Player />
+      <Sidebar>
+        <div className="app-content">
+          {activeTab === "foryou" ? <Foryou /> : null}
+          {activeTab === "fav" ? <Fav /> : null}
+          {activeTab === "recent" ? <Recent /> : null}
+          <Player />
+          <audio
+            src={currentSong.musicUrl}
+            ref={audioRef}
+            onTimeUpdate={onPlaying}
+          ></audio>
+        </div>
+      </Sidebar>
     </div>
   );
 }

@@ -1,3 +1,19 @@
 .app-body {
   display: flex;
+  flex-direction: row;
+  
+}
+.app-content {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 480px) {
+  .app-content {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    
+    
+  }
 }

@@ -53,13 +53,13 @@ export const AppProvider = ({ children }) => {
     const storedRecent =
       JSON.parse(sessionStorage.getItem("recentlyPlayed")) || [];
     setRecent(storedRecent);
-  }, []);
+  }, [recent]);
 
   useEffect(() => {
     const storedFav = JSON.parse(localStorage.getItem("favourites")) || [];
     setFav(storedFav);
-  }, []);
-
+  }, [fav]);
+  
   const prevSong = () => {
     const index = data.findIndex((i) => i.title == currentSong.title);
     if (index == 0) {

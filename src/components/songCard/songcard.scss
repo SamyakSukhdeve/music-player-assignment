@@ -51,3 +51,26 @@
   font-size: 18px;
   line-height: 24px;
 }
+
+@media (max-width: 480px) {
+  .card-body {
+    width: 100%;
+  }
+
+  .song-avatar {
+    height: 32px;
+    width: 32px;
+  }
+  .song-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .song-author {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .song-length {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

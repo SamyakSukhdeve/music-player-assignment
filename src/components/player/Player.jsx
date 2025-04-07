@@ -14,7 +14,7 @@ const Player = () => {
     nextSong,
     setFav,
     fav,
-    setRecent,
+    
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -61,6 +61,7 @@ const Player = () => {
           strokeWidth={1.5}
           trailWidth={1.5}
           trailColor="#2C2C2C"
+          className="styled-progress-bar"
         />
       </div>
       <div className="media-controles">
