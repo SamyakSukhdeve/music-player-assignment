@@ -1,9 +1,13 @@
-import { Ellipsis, Heart, Pause, Volume2 } from "lucide-react";
+import { Heart, Volume2 } from "lucide-react";
 import "./player.scss";
 import { Line } from "rc-progress";
 import { useContext, useEffect } from "react";
 import AppContext from "../../context/AppContext";
 import { Vibrant } from "node-vibrant/browser";
+import prev from "/assets/prev.svg";
+import play from "/assets/play.svg";
+import pause from "/assets/pause.svg";
+import next from "/assets/next.svg";
 
 const Player = () => {
   const {
@@ -14,7 +18,6 @@ const Player = () => {
     nextSong,
     setFav,
     fav,
-    
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -75,7 +78,7 @@ const Player = () => {
         </div>
         <div style={{ display: "flex", gap: "10px" }}>
           <img
-            src="/src/assets/prev.svg"
+            src={prev}
             style={{ cursor: "pointer" }}
             onClick={() => prevSong()}
             alt="prev"
@@ -84,14 +87,11 @@ const Player = () => {
             className="play-pause-button"
             onClick={() => setIsPlaying(!isPlaying)}
           >
-            <img
-              src={isPlaying ? "/src/assets/pause.svg" : "/src/assets/play.svg"}
-              style={{ cursor: "pointer" }}
-            />
+            <img src={isPlaying ? pause : play} style={{ cursor: "pointer" }} />
           </div>
 
           <img
-            src="/src/assets/next.svg"
+            src={next}
             onClick={() => nextSong()}
             style={{ cursor: "pointer" }}
             alt="next"

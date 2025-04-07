@@ -1,6 +1,8 @@
 import "./sidebar.scss";
 import { useContext, useState } from "react";
 import AppContext from "../../context/AppContext";
+import { AlignJustify } from "lucide-react";
+import logo from "/assets/logo.svg";
 
 const Sidebar = ({ children }) => {
   const { setActiveTab, activeTab } = useContext(AppContext);
@@ -16,11 +18,11 @@ const Sidebar = ({ children }) => {
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
       <div className="hamburger" onClick={toggleSidebar}>
-        ☰
+        <AlignJustify />
       </div>
       <div className={`sidebar-body ${isOpen ? "open" : ""}`}>
         <div>
-          <img src="/src/assets/logo.svg" alt="logo" />
+          <img src={logo} alt="logo" />
         </div>
         <div className="nav-list">
           <a onClick={() => toggleonButtonClick("foryou")}>
@@ -54,7 +56,7 @@ const Sidebar = ({ children }) => {
         <div className="avatar">
           <img
             className="avatar-img"
-            src="/src/assets/images/avatar.jpg"
+            src="/assets/images/avatar.jpg"
             alt="avatar"
           />
         </div>

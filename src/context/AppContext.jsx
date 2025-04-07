@@ -6,38 +6,37 @@ export const AppProvider = ({ children }) => {
   const data = [
     {
       title: "Die With A Smile ",
-      thumbnail: "/src/assets/images/Die With A Smile.jpg",
+      thumbnail: "/assets/images/Die With A Smile.jpg",
       musicUrl:
-        "/src/assets/audio/Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video).mp3",
+        "/assets/audio/Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video).mp3",
       duration: "4:12",
       artistName: "Lady Gaga, Bruno Mars",
     },
     {
       title: "luther",
-      thumbnail: "/src/assets/images/luther.jpg",
-      musicUrl:
-        "/src/assets/audio/Kendrick Lamar - luther (Official Audio).mp3",
+      thumbnail: "/assets/images/luther.jpg",
+      musicUrl: "/assets/audio/Kendrick Lamar - luther (Official Audio).mp3",
       duration: "2:57",
       artistName: "Kendrick Lamar ",
     },
     {
       title: "blue ",
-      thumbnail: "/src/assets/images/blue.jpg",
-      musicUrl: "/src/assets/audio/blue.mp3",
+      thumbnail: "/assets/images/blue.jpg",
+      musicUrl: "/assets/audio/blue.mp3",
       duration: "3:41",
       artistName: "yung kai ",
     },
     {
       title: "Father Ocean",
-      thumbnail: "/src/assets/images/fatherocean.jpg",
-      musicUrl: "/src/assets/audio/fatherocean.mp3",
+      thumbnail: "/assets/images/fatherocean.jpg",
+      musicUrl: "/assets/audio/fatherocean.mp3",
       duration: "5:18",
       artistName: "Ben Böhmer Remix Edit",
     },
     {
       title: "After Hours",
-      thumbnail: "/src/assets/images/afterhours.jpg",
-      musicUrl: "/src/assets/audio/afterhours.mp3",
+      thumbnail: "/assets/images/afterhours.jpg",
+      musicUrl: "/assets/audio/afterhours.mp3",
       duration: "6:01",
       artistName: "The Weeknd",
     },
@@ -59,7 +58,7 @@ export const AppProvider = ({ children }) => {
     const storedFav = JSON.parse(localStorage.getItem("favourites")) || [];
     setFav(storedFav);
   }, [fav]);
-  
+
   const prevSong = () => {
     const index = data.findIndex((i) => i.title == currentSong.title);
     if (index == 0) {
